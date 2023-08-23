@@ -7,36 +7,41 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav class="bg-white shadow-lg p-2 flex justify-between items-center">
-        <div class="flex px-10 items-center ">
+    <nav class="bg-white shadow-lg p-2 flex sticky top-0 justify-between items-center">
+        <div class="flex px-10 items-center">
             <img class="h-16 w-auto sm:h-16 sm:w-full mr-2" src="logo.png" alt="Logo">
         </div>
         
-        <div class=" w-1/2 space-x-10  justify-center  hidden sm:flex">
-          <div class="text-gray-600 hover:text-pink-300">
-            <a href="index.html">HOME</a>
+        <div class="w-1/2 space-x-10 justify-center hidden sm:flex" id="navLinks">
+            <div class="text-gray-600 hover:text-pink-300">
+                <a href="index.html">HOME</a>
+            </div>
+            <div class="text-gray-600 hover:text-pink-300">
+                <a href="about.html">ABOUT</a>
+            </div>
+            <div class="text-gray-600 hover:text-pink-300">
+                <a href="projects.html">PROJECTS</a>
+            </div>
+            <div class="text-pink-600 hover:text-pink-300">
+                <a href="contact.html">CONTACT</a>
+            </div>
         </div>
-        
-        <div class="text-gray-600 hover:text-pink-300">
-            <a href="about.html">ABOUT</a>
-        </div>
-        <div class="text-gray-600 hover:text-pink-300">
-            <a href="projects.html">PROJECTS</a>
-        </div>
-        <div class="text-pink-600 hover:text-pink-300">
-            <a href="contact.html">CONTACT</a>
-        </div>
-         
-        </div>
-
-        <div class="sm:hidden">
+    
+        <div class="sm:hidden" id="menuButton">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-gray-600">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
         </div>
-
-      </nav>
-      
+    </nav>
+    
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const navLinks = document.getElementById('navLinks');
+    
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+        });
+    </script>
 
       
 
